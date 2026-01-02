@@ -1,0 +1,25 @@
+
+FINAL MODEL REPORT 
+
+Best Model: XGBoost_tuned
+
+Log-space performance:
+- RMSE (log): 1.3654
+- MAE (log): 0.4712
+- R² (log): 0.3835
+
+Real-price performance:
+- RMSE (price): 8471868.23
+- MAE (price): 3898674.94
+- MAPE: inf% 
+
+Interpretation:
+The MAE indicates that, on average, the model is off by ≈ 3898675 units of price.
+
+IMPORTANT NOTE ABOUT MAPE:
+The MAPE value appears as 'inf%' because some properties in the dataset 
+have actual_price = 0. Since MAPE divides by the true value, division by zero 
+makes the metric undefined. For this reason, MAPE is not suitable for this dataset.
+Instead, RMSE, MAE, and R² (especially in log-space) provide the correct evaluation.
+
+All figures and predictions have been exported to the results/ folder.
