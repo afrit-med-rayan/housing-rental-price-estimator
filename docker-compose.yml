@@ -1,0 +1,39 @@
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: housing-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/workspace
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+    command: >
+      bash -lc "jupyter lab
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --NotebookApp.token=''
+      --NotebookApp.password=''
+      --notebook-dir=/workspace"
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: housing-streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./:/workspace
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true
+      - TZ=UTC
+    restart: unless-stopped
+    command: >
+      bash -lc "streamlit run /workspace/streamlite_app/app.py
+      --server.port 8501
+      --server.address 0.0.0.0"

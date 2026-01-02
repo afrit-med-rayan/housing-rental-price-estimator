@@ -1,0 +1,44 @@
+# Core
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.2
+scipy
+
+# ML boost
+xgboost>=1.7
+lightgbm>=4.0
+
+# NLP
+transformers>=4.30
+sentence-transformers>=2.2
+
+# Deep learning + vision (CPU)
+torch>=2.0
+torchvision>=0.15
+timm>=0.8
+
+# CV utils
+opencv-python
+Pillow
+scikit-image
+
+# Notebook / dev
+jupyterlab
+ipykernel
+notebook
+
+# Visualizations
+matplotlib
+plotly
+
+# Explainability
+shap
+
+# Web dev / demo
+streamlit
+
+# Other
+tqdm
+pydantic
+python-dotenv
+gunicorn
